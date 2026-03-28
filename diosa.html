@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especificação de Requisitos - Projeto DIOSA</title>
+
+<style>
+:root {
+    --primary: #0f172a;
+    --accent: #00f2ff;
+    --secondary: #3b82f6;
+    --bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), #1e293b);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+}
+
+.container {
+    max-width: 1100px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 35px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--primary);
+    border-left: 6px solid var(--accent);
+    padding-left: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.priority-must { color: red; font-weight: bold; }
+.priority-should { color: blue; font-weight: bold; }
+
+.btn {
+    display: block;
+    background: var(--primary);
+    color: var(--accent);
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+
+}
+
+.grid-downloads p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.quebra-pagina {
+    page-break-before: always;
+    break-before: page;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1><span style="color:var(--accent)">DIOSA</span> Intelligence System</h1>
+<p>Software Requirements Specification (SRS) - ISO/IEC/IEEE 29148</p>
+<button onclick="baixarPDF()" class="btn">📄 Baixar em PDF</button>
+</header>
+
+<div class="container"  id="conteudoPDF">
+
+<div class="card">
+<h2>1. Introdução</h2>
+
+<h3>1.1 Propósito</h3>
+<p>Este documento tem como objetivo descrever os requisitos do sistema DIOSA, fornecendo uma base estruturada para desenvolvimento, validação e comunicação entre stakeholders.</p>
+
+<h3>1.2 Escopo</h3>
+<p>A DIOSA é uma Inteligência Artificial pessoal avançada, executada em servidor próprio, capaz de interagir por voz e texto, gerenciar tarefas, armazenar informações e atuar de forma proativa como assistente digital contínua.</p>
+
+<h3>1.3 Definições</h3>
+<ul>
+<li><strong>IA:</strong> Inteligência Artificial</li>
+<li><strong>LLM:</strong> Modelo de linguagem de grande escala</li>
+<li><strong>Multimodal:</strong> Capacidade de processar diferentes tipos de entrada (texto, voz, imagem, etc.)</li>
+</ul>
+</div>
+
+
+<div class="card">
+<h2>2. Visão Geral do Sistema</h2>
+
+<p>A DIOSA é projetada como um “cérebro digital” capaz de auxiliar o usuário na organização da vida pessoal, estudos e trabalho, mantendo memória persistente, aprendizado contínuo e interação natural.</p>
+
+<ul>
+<li>Assistente pessoal inteligente</li>
+<li>Interface conversacional contínua</li>
+<li>Memória digital persistente</li>
+<li>Sistema proativo e adaptativo</li>
+</ul>
+</div>
+
+
+<div class="card">
+<h2>3. Stakeholders</h2>
+<ul>
+<li><strong>Usuário Final:</strong> Utiliza a DIOSA para organização pessoal</li>
+<li><strong>Desenvolvedor:</strong> Responsável pela implementação e evolução</li>
+<li><strong>Administrador:</strong> Gerencia infraestrutura e integrações</li>
+</ul>
+</div>
+
+
+<div class="card">
+<h2>4. Requisitos do Sistema</h2>
+
+<h3>4.1 Requisitos Funcionais</h3>
+<table>
+<tr><th>ID</th><th>Requisito</th><th>Prioridade</th></tr>
+
+<tr><td>RF-01</td><td>Conversar com o usuário por texto</td><td>Must</td></tr>
+<tr><td>RF-02</td><td>Reconhecer comandos por voz</td><td>Must</td></tr>
+<tr><td>RF-03</td><td>Criar e gerenciar tarefas</td><td>Must</td></tr>
+<tr><td>RF-04</td><td>Organizar agenda e compromissos</td><td>Must</td></tr>
+<tr><td>RF-05</td><td>Armazenar memória do usuário</td><td>Must</td></tr>
+<tr><td>RF-06</td><td>Responder perguntas e manter contexto</td><td>Must</td></tr>
+<tr><td>RF-07</td><td>Processar imagens e documentos</td><td>Should</td></tr>
+<tr><td>RF-08</td><td>Sugerir tarefas automaticamente</td><td>Should</td></tr>
+<tr><td>RF-09</td><td>Interagir de forma proativa</td><td>Should</td></tr>
+</table>
+
+
+<h3>4.2 Requisitos Não Funcionais</h3>
+<ul>
+<li>Tempo de resposta inferior a 2 segundos</li>
+<li>Execução contínua (24/7)</li>
+<li>Persistência de dados garantida</li>
+<li>Escalabilidade para expansão de funcionalidades</li>
+<li>Privacidade com controle local de dados</li>
+</ul>
+
+
+<h3>4.3 Regras de Negócio</h3>
+<ul>
+<li>A DIOSA deve priorizar tarefas com base em urgência e contexto</li>
+<li>O sistema deve sugerir ações com base no histórico do usuário</li>
+<li>Interações devem respeitar preferências aprendidas</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+<h2>5. Casos de Uso</h2>
+
+<p><strong>UC-01 - Criar tarefa</strong></p>
+<ul>
+<li>Usuário solicita criação</li>
+<li>Sistema registra tarefa</li>
+<li>Armazena na memória</li>
+</ul>
+
+<p><strong>UC-02 - Lembrete automático</strong></p>
+<ul>
+<li>Sistema identifica tarefa pendente</li>
+<li>Envia notificação ao usuário</li>
+</ul>
+
+<p><strong>UC-03 - Conversa contínua</strong></p>
+<ul>
+<li>Usuário interage com a IA</li>
+<li>Sistema mantém contexto da conversa</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+<h2>6. Arquitetura do Sistema</h2>
+
+<ul>
+<li>Servidor central (processamento da IA)</li>
+<li>Sistema de memória persistente</li>
+<li>Motor de conversação</li>
+<li>Motor de planejamento</li>
+<li>Sistema de notificações</li>
+<li>Processamento multimodal</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+<h2>7. Ambiente Operacional</h2>
+
+<ul>
+<li>Servidor próprio (cloud ou local)</li>
+<li>Acesso via celular, computador e web</li>
+<li>Conexão com internet</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+<h2>8. Restrições</h2>
+
+<ul>
+<li>Dependência de APIs externas para IA</li>
+<li>Necessidade de infraestrutura de servidor</li>
+<li>Limitações de processamento local</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+<h2>9. Evolução do Sistema</h2>
+
+<ul>
+<li>Aprendizado contínuo de hábitos</li>
+<li>Planejamento automático avançado</li>
+<li>Personalidade adaptativa</li>
+<li>Automação completa da rotina</li>
+</ul>
+
+</div>
+
+<div class="card quebra-pagina">
+    <h2>Modelos de Referência (Downloads)</h2>
+    <p>Documentos e templates utilizados como base para a modelagem dos requisitos:</p>
+
+    <div class="grid-downloads">
+
+        <!-- ISO -->
+        <p>Modelo oficial internacional que define como estruturar documentos de requisitos de software, servindo como base para padrões profissionais.</p>
+        <a href="https://www.well-architected-guide.com/documents/iso-iec-ieee-29148-template/" target="_blank" class="btn">
+            ISO/IEC/IEEE 29148 (Padrão Oficial)
+        </a>
+
+        <!-- IEEE -->
+        <p>Modelo clássico de especificação de requisitos amplamente utilizado no meio acadêmico, apresentando uma estrutura organizada para documentação de sistemas.</p>
+        <a href="https://www.dexform.com/download/software-requirements-specification-srs-template" target="_blank" class="btn">
+            IEEE 830 (Modelo Clássico)
+        </a>
+
+        <!-- Systrack -->
+        <p>Projeto acadêmico completo que demonstra, na prática, a aplicação de um documento de requisitos em um sistema real.</p>
+        <a href="https://eduardocunha11.github.io/firstblog/aulas/gsi522/P4-Systrack.pdf" target="_blank" class="btn">
+            Exemplo Acadêmico SRS (Systrack)
+        </a>
+
+        <!-- UFPE -->
+        <p>Exemplo de documentação desenvolvida em ambiente universitário, com maior nível de detalhamento e abordagem próxima ao contexto profissional.</p>
+        <a href="https://www.cin.ufpe.br/~if716/projetos/2016-2/Equipe0.2.pdf" target="_blank" class="btn">
+            Documento de Requisitos (UFPE)
+        </a>
+
+        <!-- DevMedia -->
+        <p>Documento prático voltado para o desenvolvimento de um aplicativo, demonstrando a aplicação real de requisitos no mercado de software.</p>
+        <a href="https://www.devmedia.com.br/arquivos/cursos/Requisitos_2205/Documento_Requisitos-Aplicativo.pdf" target="_blank" class="btn">
+            Documento de Requisitos (Aplicativo)
+        </a>
+
+    </div>
+
+    <p><strong>Observação:</strong> Os modelos acima foram utilizados como base para a estruturação deste documento, seguindo padrões internacionais de especificação de requisitos.</p>
+</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+function baixarPDF() {
+    const elemento = document.getElementById("conteudoPDF");
+
+    const opcoes = {
+        margin: 0.5,
+        filename: 'Diosa_SRS.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opcoes).from(elemento).save();
+}
+</script>
+</body>
+</html>
